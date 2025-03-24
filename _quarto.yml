@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+
+book:
+  title: "ancora-imparo"
+  author: "Bhaswar Chakma"
+  date: "24/03/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
