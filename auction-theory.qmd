@@ -1,0 +1,68 @@
+# Auction Theory
+
+## Private-value First-price Auction
+
+### Setup
+
+- One **item** for sale.
+
+- $N$ **bidders** $i \in \{1, ..., N\}$
+
+    + Everyone has a prive valuation $x_i \in [0, \bar{x}]$ for the item, i.i.d. There is no correlation among bidders' valuations
+    
+- Everyone simultaneously submits bid $b_i$: one bidder does not what other bidders' are bidding i.e. sealed-bids.
+
+-  Highest bind wins, pays $b_i$, rest pay nothing.
+
+- All agents maximize expected profit $$
+\Pi(b_i, x_i) = (x_i - b_i) \cdot \mathbb{P} \left( b_i \geq \max_{j \ne i} b_j \right)
+$$
+    + Expected profit is a function of bid and private valuation
+    
+    + If bidder $i$ wins, the profit is $(x_i - b_i)$
+    
+    + The probability of winning is $\mathbb{P} \left( b_i \geq \max_{j \ne i} b_j \right)$
+    
+        - only wins when $b_i$ is greater than all other bids $b_j$
+
+### Equilibrium
+        
+- Trade-off: bidding higher wins more often, gives lower payoff
+
+- Look for symmetric equilibrium:
+
+    + Suppose all $j\neq i$  use some bidding strategy $\beta(x)$ (strictly increasing and differntiable) -- same bidding strategy. Strictly increasing means the higher the valuation the higher the bid.
+    
+    + Find optimal bid $b_i(x_i))$ (Agent i assumes everyone else using $\beta(x)$
+    
+    + In symmetric eqilibrium,  we must have $b_i(x_i) = b_i(x_i))$
+
+-  Any bid $b_i > \beta(\bar x)$ is strictly dominated by $b_i = \beta(\bar x)$. 
+
+    + There is a maximal bid, $\beta(\bar x)$ you can expect from your opponent.
+    
+    + It is also never profitable for you to bid above $\beta(\bar x)$. You lose money if you win. But this does not increase your probability of winning.
+    
+    
+- If $x_i = 0$ then dominant to bid $b_i = 0 \implies \beta(0) = 0$ 
+
+
+
+
+### Solving for Equilibrium
+
+
+- Let $G(\cdot)$ be the CDF of $y_1 = \max_{j \ne i} x_j$, and $g(\cdot)$ its PDF.
+
+    +  highest valuation amont all opponents
+    
+- Bid $b$ must maximize profit:$$
+\Pi(b, x) = (x - b) \cdot \underbrace{G\left( \beta^{-1}(b) \right)}_{\text{probability}}
+$$
+
+- FOC w.r.t. $b$: $$
+\frac{g\left( \beta^{-1}(b) \right)}{\beta'\left( \beta^{-1}(b) \right)} (x - b) - G\left( \beta^{-1}(b) \right) = 0
+$$
+
+- This condition yields optimal $b$ in terms of $x$ and $\beta(.)$
+

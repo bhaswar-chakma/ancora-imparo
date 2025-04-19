@@ -20,13 +20,23 @@
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "auction-theory.html",
+    "href": "auction-theory.html",
+    "title": "2  Auction Theory",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "2.1 Private-value First-price Auction",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Auction Theory</span>"
+    ]
+  },
+  {
+    "objectID": "auction-theory.html#private-value-first-price-auction",
+    "href": "auction-theory.html#private-value-first-price-auction",
+    "title": "2  Auction Theory",
+    "section": "",
+    "text": "2.1.1 Setup\n\nOne item for sale.\n\\(N\\) bidders \\(i \\in \\{1, ..., N\\}\\)\n\nEveryone has a prive valuation \\(x_i \\in [0, \\bar{x}]\\) for the item, i.i.d. There is no correlation among bidders’ valuations\n\nEveryone simultaneously submits bid \\(b_i\\): one bidder does not what other bidders’ are bidding i.e. sealed-bids.\nHighest bind wins, pays \\(b_i\\), rest pay nothing.\nAll agents maximize expected profit \\[\n\\Pi(b_i, x_i) = (x_i - b_i) \\cdot \\mathbb{P} \\left( b_i \\geq \\max_{j \\ne i} b_j \\right)\n\\]\n\nExpected profit is a function of bid and private valuation\nIf bidder \\(i\\) wins, the profit is \\((x_i - b_i)\\)\nThe probability of winning is \\(\\mathbb{P} \\left( b_i \\geq \\max_{j \\ne i} b_j \\right)\\)\n\nonly wins when \\(b_i\\) is greater than all other bids \\(b_j\\)\n\n\n\n\n\n2.1.2 Equilibrium\n\nTrade-off: bidding higher wins more often, gives lower payoff\nLook for symmetric equilibrium:\n\nSuppose all \\(j\\neq i\\) use some bidding strategy \\(\\beta(x)\\) (strictly increasing and differntiable) – same bidding strategy. Strictly increasing means the higher the valuation the higher the bid.\nFind optimal bid \\(b_i(x_i))\\) (Agent i assumes everyone else using \\(\\beta(x)\\)\nIn symmetric eqilibrium, we must have \\(b_i(x_i) = b_i(x_i))\\)\n\nAny bid \\(b_i &gt; \\beta(\\bar x)\\) is strictly dominated by \\(b_i = \\beta(\\bar x)\\).\n\nThere is a maximal bid, \\(\\beta(\\bar x)\\) you can expect from your opponent.\nIt is also never profitable for you to bid above \\(\\beta(\\bar x)\\). You lose money if you win. But this does not increase your probability of winning.\n\nIf \\(x_i = 0\\) then dominant to bid \\(b_i = 0 \\implies \\beta(0) = 0\\)\n\n\n\n2.1.3 Solving for Equilibrium\n\nLet \\(G(\\cdot)\\) be the CDF of \\(y_1 = \\max_{j \\ne i} x_j\\), and \\(g(\\cdot)\\) its PDF.\n\nhighest valuation amont all opponents\n\nBid \\(b\\) must maximize profit:\\[\n\\Pi(b, x) = (x - b) \\cdot \\underbrace{G\\left( \\beta^{-1}(b) \\right)}_{\\text{probability}}\n\\]\nFOC w.r.t. \\(b\\): \\[\n\\frac{g\\left( \\beta^{-1}(b) \\right)}{\\beta'\\left( \\beta^{-1}(b) \\right)} (x - b) - G\\left( \\beta^{-1}(b) \\right) = 0\n\\]\nThis condition yields optimal \\(b\\) in terms of \\(x\\) and \\(\\beta(.)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Auction Theory</span>"
     ]
   },
   {
